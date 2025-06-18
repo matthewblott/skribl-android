@@ -62,8 +62,8 @@ class NewNoteComponent(
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            val activity = fragment.activity as MainActivity
-            activity.bottomNavigationController.selectTab(1)
+//            val activity = fragment.activity as MainActivity
+//            activity.bottomNavigationController.selectTab(1)
             replyTo(message.event)
           })
       }

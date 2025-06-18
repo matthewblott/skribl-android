@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.matthewblott.scribble.R
-import com.matthewblott.scribble.activities.SignInActivity
+//import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
@@ -65,9 +65,9 @@ class ButtonComponent(
 //            val activity = fragment.activity as MainActivity
 //            activity.bottomNavigationController.selectTab(2)
 
-            val activity = fragment.activity as SignInActivity
+//            val activity = fragment.activity as SignInActivity
 //            activity.startActivity(android.content.Intent(this, MainActivity::class.java)) 
-            activity.launchMainActivity() 
+//            activity.launchMainActivity() 
             replyTo(message.event)
           })
       }

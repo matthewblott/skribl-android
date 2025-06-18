@@ -87,7 +87,7 @@ class Application : android.app.Application() {
     
     Hotwire.config.jsonConverter = dev.hotwire.core.bridge.KotlinXJsonConverter()
 
-//    Hotwire.config.debugLoggingEnabled = BuildConfig.DEBUG
+    Hotwire.config.debugLoggingEnabled = BuildConfig.DEBUG
     Hotwire.config.webViewDebuggingEnabled = BuildConfig.DEBUG
 //    Hotwire.config.applicationUserAgentPrefix = "Scribble;"
     

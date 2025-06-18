@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.matthewblott.scribble.R
-import com.matthewblott.scribble.activities.SignInActivity
+//import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
@@ -63,8 +63,8 @@ class SignInComponent(
           imageName = data.imageName,
           onClick = {
             // Need to check the login was successful before launching the main activity 
-            val activity = fragment.activity as SignInActivity
-            activity.launchMainActivity()
+//            val activity = fragment.activity as SignInActivity
+//            activity.launchMainActivity()
             replyTo(message.event)
           })
       }

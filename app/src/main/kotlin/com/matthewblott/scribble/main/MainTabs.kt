@@ -11,7 +11,7 @@ val notesTab = HotwireBottomTab(
   title = "Scribble",
   iconResId = R.drawable.posts,
   configuration = NavigatorConfiguration(
-    name =  "main",
+    name =  "notes",
     startLocation = "$baseURL/$userId/notes",
     navigatorHostId = R.id.notes_navigator_host,
   )
@@ -21,7 +21,7 @@ val newNoteTab = HotwireBottomTab(
   title = "New Note",
   iconResId = R.drawable.posts,
   configuration = NavigatorConfiguration(
-    name =  "main",
+    name =  "new-note",
     startLocation = "$baseURL/$userId/notes/new",
     navigatorHostId = R.id.new_note_navigator_host,
   )

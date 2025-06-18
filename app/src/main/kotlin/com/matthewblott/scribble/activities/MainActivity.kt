@@ -32,10 +32,10 @@ class MainActivity : HotwireActivity() {
 
   override fun navigatorConfigurations() = mainTabs.navigatorConfigurations
 
-  fun launchSignInActivity() {
-    startActivity(Intent(this as Context, SignInActivity::class.java))
-    finish() // kill LauncherActivity so it won't show in back stack
-  }
+//  fun launchSignInActivity() {
+//    startActivity(Intent(this as Context, SignInActivity::class.java))
+//    finish() // kill LauncherActivity so it won't show in back stack
+//  }
   
   private fun initializeBottomNavigationView(){
     val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
@@ -46,5 +46,7 @@ class MainActivity : HotwireActivity() {
     }
     
   }
+  
+  
   
 }
