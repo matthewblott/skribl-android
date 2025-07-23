@@ -1,5 +1,6 @@
 package com.matthewblott.scribble
 
+import android.os.Build
 import android.webkit.CookieManager
 import com.matthewblott.scribble.components.ButtonComponent
 import com.matthewblott.scribble.components.NewNoteComponent
@@ -26,6 +27,12 @@ import dev.hotwire.navigation.config.registerFragmentDestinations
 class Application : android.app.Application() {
   override fun onCreate() {
     super.onCreate()
+    val cookieManager = CookieManager.getInstance()
+    cookieManager.setAcceptCookie(true)
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      cookieManager.flush()
+    }    
     
 //    val cookieManager = CookieManager(null, CookiePolicy.ACCEPT_ALL)
 //    CookieHandler.setDefault(cookieManager)

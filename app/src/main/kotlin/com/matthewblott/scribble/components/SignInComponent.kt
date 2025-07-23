@@ -1,9 +1,13 @@
 package com.matthewblott.scribble.components
 
+import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup
+import android.webkit.CookieManager
 import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
@@ -63,8 +67,24 @@ class SignInComponent(
           imageName = data.imageName,
           onClick = {
             // Need to check the login was successful before launching the main activity 
-            val activity = fragment.activity as SignInActivity
-            activity.launchMainActivity()
+
+            val cookieManager = CookieManager.getInstance()
+
+            // Force multiple cookie syncs
+            repeat(3) {
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                cookieManager.flush()
+              }
+            }
+
+            // Longer delay to ensure cookies are written
+            Handler(Looper.getMainLooper()).postDelayed({
+//              launchSecondActivity()
+              val activity = fragment.activity as SignInActivity
+              activity.launchMainActivity()
+            }, 500) // Increased delay
+            
+            
             replyTo(message.event)
           })
       }
