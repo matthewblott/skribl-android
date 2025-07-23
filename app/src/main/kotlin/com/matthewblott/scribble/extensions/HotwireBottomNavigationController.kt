@@ -10,10 +10,13 @@ import androidx.core.animation.doOnEnd
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.findFragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.FragmentNavigator
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.matthewblott.scribble.activities.baseURL
+import com.matthewblott.scribble.fragments.WebFragment
 import dev.hotwire.core.turbo.nav.PresentationContext
 import dev.hotwire.core.turbo.visit.VisitOptions
 import dev.hotwire.navigation.activities.HotwireActivity
@@ -48,16 +51,18 @@ class HotwireBottomNavigationController(
 
   var tabs = listOf<HotwireBottomTab>()
     private set
-
+ 
+  fun clear() {
+    this.tabs = listOf<HotwireBottomTab>()
+  }
+  
   fun load(
     tabs: List<HotwireBottomTab>,
     selectedTabIndex: Int = 0
   ) {
     require(tabs.isNotEmpty()) { "Tabs cannot be empty." }
     removeDestinationChangedListener()
-
     this.tabs = tabs
-
     val initialIndex = selectedTabIndex.coerceIn(0, tabs.lastIndex)
     val initialTab = tabs[initialIndex]
 
@@ -67,6 +72,8 @@ class HotwireBottomNavigationController(
     initDestinationChangedListener()
     applyWindowInsets()
     switchTab(initialTab)
+    
+//    route("$baseURL/sign_in")
   }
 
   fun selectTab(tabIndex: Int) {
@@ -167,10 +174,12 @@ class HotwireBottomNavigationController(
 
   private fun switchTab(tab: HotwireBottomTab) {
     activity.delegate.setCurrentNavigator(tab.configuration)
-
+    
     tabs.forEach {
       val navigatorHostView = activity.findViewById<View>(it.configuration.navigatorHostId)
       navigatorHostView?.isVisible = it == tab
+//      val fragment = navigatorHostView?.findFragment<WebFragment>() 
+//      fragment?.refresh() 
     }
   }
 

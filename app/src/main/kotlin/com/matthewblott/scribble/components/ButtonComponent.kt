@@ -116,7 +116,6 @@ private fun ToolbarButton(title: String, imageName: String?, onClick: () -> Unit
     imageName?.let {
       Text(
         text = it,
-//        fontFamily = FontFamily(Font(R.font.material_symbols)),
         fontFamily = FontFamily(Font(R.font.material_symbols)),
         fontSize = 28.sp,
 //        style = TextStyle(fontFeatureSettings = "liga"),

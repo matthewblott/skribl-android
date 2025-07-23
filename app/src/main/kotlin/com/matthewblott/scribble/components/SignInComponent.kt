@@ -1,8 +1,11 @@
 package com.matthewblott.scribble.components
 
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,23 +22,36 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.fragment.app.FragmentContainerView
+import androidx.fragment.app.findFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.matthewblott.scribble.R
+import com.matthewblott.scribble.activities.MainActivity
+import com.matthewblott.scribble.activities.baseURL
+import com.matthewblott.scribble.fragments.SettingsFragment
+import com.matthewblott.scribble.fragments.WebFragment
+//import com.matthewblott.scribble.main.mainTabs
 //import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
 import dev.hotwire.navigation.destinations.HotwireDestination
 import dev.hotwire.navigation.fragments.HotwireFragment
+import dev.hotwire.navigation.fragments.HotwireWebFragment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import com.matthewblott.scribble.activities.baseURL
+import com.matthewblott.scribble.extensions.HotwireBottomNavigationController
+import com.matthewblott.scribble.main.signedInTabs
+import dev.hotwire.navigation.tabs.navigatorConfigurations
 
 class SignInComponent(
   name: String,
   private val bridgeDelegate: BridgeDelegate<HotwireDestination>
 ) : BridgeComponent<HotwireDestination>(name, bridgeDelegate) {
   private val buttonId = 1
-  private val fragment: HotwireFragment
-    get() = bridgeDelegate.destination.fragment as HotwireFragment
+  private val fragment: HotwireWebFragment
+    get() = bridgeDelegate.destination.fragment as HotwireWebFragment
 
   override fun onReceive(message: Message) {
     when (message.event) {
@@ -62,10 +78,42 @@ class SignInComponent(
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            // Need to check the login was successful before launching the main activity 
-//            val activity = fragment.activity as SignInActivity
-//            activity.launchMainActivity()
             replyTo(message.event)
+
+            val activity = fragment.activity as MainActivity
+            val controller = activity.bottomNavigationController
+//            val tabs = controller.tabs
+//            controller.clear()
+//            fragment.refresh()
+            val bottomNavigationView = activity.findViewById<BottomNavigationView>(R.id.bottom_nav)
+//            val bottomNavigationView2 = activity.findViewById<BottomNavigationView>(R.id.bottom_nav2)
+//            activity.delegate.currentNavigator?.clearAll()
+//            activity.bottomNavigationController2 = HotwireBottomNavigationController(activity, bottomNavigationView2)
+//            activity.bottomNavigationController2.load(signedInTabs, 3)
+//            activity.navigatorConfigurations() = signedInTabs.navigatorConfigurations
+//            bottomNavigationView.visibility = View.GONE
+//            bottomNavigationView2.visibility = View.VISIBLE
+            
+            val host = activity.delegate.findNavigatorHost(R.id.sign_in_navigator_host)
+            val navigator = host?.navigator
+            val ctl = host?.navController
+//
+//            Handler(Looper.getMainLooper()).postDelayed({
+//              host?.navigator?.route("$baseURL/settings")
+//            }, 250)
+
+            // Have the Rails application display a page after a successful login that contains a bridge
+            // component that then calls back and sets the navigator's route (as is done above).
+            
+//            activity.bottomNavigationController.selectTab(3)
+            
+//            val fragments = host?.childFragmentManager?.fragments
+//            fragments?.forEach {
+//              println(it.id)
+//            }
+//            val myList = mutableListOf(1, 2)
+//            if(myList.count() > 2) {
+//            }
           })
       }
     }

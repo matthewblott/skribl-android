@@ -11,6 +11,9 @@ import com.matthewblott.scribble.R
 import com.matthewblott.scribble.extensions.HotwireBottomNavigationController
 import com.matthewblott.scribble.main.MainActivityViewModel
 import com.matthewblott.scribble.main.mainTabs
+import com.matthewblott.scribble.main.signInTab
+import com.matthewblott.scribble.main.signInTabs
+import com.matthewblott.scribble.main.signedInTabs
 import dev.hotwire.navigation.activities.HotwireActivity
 import dev.hotwire.navigation.tabs.navigatorConfigurations
 import dev.hotwire.navigation.util.applyDefaultImeWindowInsets
@@ -19,6 +22,7 @@ const val baseURL = "http://10.0.2.2:3000"
 
 class MainActivity : HotwireActivity() {
   lateinit var bottomNavigationController: HotwireBottomNavigationController
+  lateinit var bottomNavigationController2: HotwireBottomNavigationController
   private val viewModel: MainActivityViewModel by viewModels()
   
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,12 +43,21 @@ class MainActivity : HotwireActivity() {
   
   private fun initializeBottomNavigationView(){
     val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
-    bottomNavigationController = HotwireBottomNavigationController(this, bottomNavigationView)
-    bottomNavigationController.load(mainTabs, 0)
-    bottomNavigationController.setOnTabSelectedListener { index, _ ->
-      viewModel.selectedTabIndex = index
-    }
+//    val bottomNavigationView2 = findViewById<BottomNavigationView>(R.id.bottom_nav2)
     
+    bottomNavigationController = HotwireBottomNavigationController(this, bottomNavigationView)
+//    bottomNavigationController2 = HotwireBottomNavigationController(this, bottomNavigationView2)
+//    bottomNavigationController.load(signInTabs, 0)
+    bottomNavigationController.load(mainTabs, 0)
+     
+//    bottomNavigationController2.load(signedInTabs, 0)
+
+    bottomNavigationView.visibility = View.VISIBLE
+//    bottomNavigationView2.visibility = View.GONE  
+    
+//    bottomNavigationController.setOnTabSelectedListener { index, _ ->
+//      viewModel.selectedTabIndex = index
+//    }
   }
   
   

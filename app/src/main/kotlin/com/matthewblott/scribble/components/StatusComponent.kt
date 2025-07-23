@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.matthewblott.scribble.R
 import com.matthewblott.scribble.activities.MainActivity
-//import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
@@ -29,13 +28,12 @@ import dev.hotwire.navigation.destinations.HotwireDestination
 import dev.hotwire.navigation.fragments.HotwireFragment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import com.matthewblott.scribble.activities.baseURL
 
-class SignOutComponent(
+class StatusComponent(
   name: String,
   private val bridgeDelegate: BridgeDelegate<HotwireDestination>
 ) : BridgeComponent<HotwireDestination>(name, bridgeDelegate) {
-  private val buttonId = 1
+  private val buttonId = 2
   private val fragment: HotwireFragment
     get() = bridgeDelegate.destination.fragment as HotwireFragment
 
@@ -64,16 +62,8 @@ class SignOutComponent(
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            // Need to check the login was successful before launching the main activity 
-//            val activity = fragment.activity as MainActivity
-//            activity.launchSignInActivity()
-            // Refresh first tab
-            // Move to first tab 
-
             val activity = fragment.activity as MainActivity
-            activity.bottomNavigationController.selectTab(0)
-//            fragment.navigator.route("https://www.google.co.uk")
-//            fragment.navigator.route("$baseURL/signed_in")
+            activity.bottomNavigationController.selectTab(4)
             replyTo(message.event)
           })
       }

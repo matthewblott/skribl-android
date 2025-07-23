@@ -14,13 +14,27 @@ open class SignInFragment : HotwireWebFragment() {
     val hotwireActivity = this.activity as MainActivity
     val bottomNav = hotwireActivity.findViewById<View>(R.id.bottom_nav_container)
     
-    if(location.endsWith("sign_in")) {
-      bottomNav.visibility = View.GONE
-    }
-    else {
-      bottomNav.visibility = View.VISIBLE
-    }
+//    if(location.endsWith("sign_in")) {
+//      bottomNav.visibility = View.GONE
+//    }
+//    else {
+//      bottomNav.visibility = View.VISIBLE
+//    }
   
-  } 
+  }
+
+  override fun onVisitRequestFinished(location: String) {
+    super.onVisitRequestFinished(location)
+    val hotwireActivity = this.activity as MainActivity
+    val bottomNav = hotwireActivity.findViewById<View>(R.id.bottom_nav_container)
+
+//    if(location.endsWith("sign_in")) {
+//      bottomNav.visibility = View.GONE
+//    }
+//    else {
+//      bottomNav.visibility = View.VISIBLE
+//    }
+    
+  }
 
 }

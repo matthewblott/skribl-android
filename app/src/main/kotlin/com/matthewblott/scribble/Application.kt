@@ -1,11 +1,13 @@
 package com.matthewblott.scribble
 
 import android.webkit.CookieManager
-import com.matthewblott.scribble.components.ButtonComponent
 import com.matthewblott.scribble.components.NewNoteComponent
+import com.matthewblott.scribble.components.SelectSignInTabFromStatusTabComponent
+import com.matthewblott.scribble.components.SignInSuccessComponent
 import com.matthewblott.scribble.components.ViewNotesFromIndexComponent
 import com.matthewblott.scribble.components.SignInComponent
 import com.matthewblott.scribble.components.SignOutComponent
+import com.matthewblott.scribble.components.StatusComponent
 import com.matthewblott.scribble.components.ViewNotesComponent
 import com.matthewblott.scribble.fragments.NotesFragment
 import com.matthewblott.scribble.fragments.SettingsFragment
@@ -77,11 +79,13 @@ class Application : android.app.Application() {
     )
 
     Hotwire.registerBridgeComponents(
-//      BridgeComponentFactory("button", ::ButtonComponent),
+      BridgeComponentFactory("select-sign-in", ::SelectSignInTabFromStatusTabComponent),
+      BridgeComponentFactory("status", ::StatusComponent),
       BridgeComponentFactory("sign-in", ::SignInComponent),
+      BridgeComponentFactory("sign-in-success", ::SignInSuccessComponent),
       BridgeComponentFactory("sign-out", ::SignOutComponent),
       BridgeComponentFactory("view-notes", ::ViewNotesComponent),
-        BridgeComponentFactory("view-notes-from-index", ::ViewNotesFromIndexComponent),
+      BridgeComponentFactory("view-notes-from-index", ::ViewNotesFromIndexComponent),
       BridgeComponentFactory("new-note", ::NewNoteComponent),
     ) 
     

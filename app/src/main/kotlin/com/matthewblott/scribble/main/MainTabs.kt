@@ -5,7 +5,17 @@ import com.matthewblott.scribble.activities.baseURL
 import dev.hotwire.navigation.navigator.NavigatorConfiguration
 import dev.hotwire.navigation.tabs.HotwireBottomTab
 
-const val userId = 4
+val userId = 4
+
+val signInTab = HotwireBottomTab(
+  title = "Sign in",
+  iconResId = R.drawable.posts,
+  configuration = NavigatorConfiguration(
+    name =  "sign-in",
+    startLocation = "$baseURL/sign_in",
+    navigatorHostId = R.id.sign_in_navigator_host,
+  )
+)
 
 val notesTab = HotwireBottomTab(
   title = "Scribble",
@@ -27,20 +37,41 @@ val newNoteTab = HotwireBottomTab(
   )
 )
 
-
 val settingsTab = HotwireBottomTab(
   title = "Settings",
   iconResId = R.drawable.settings,
   configuration = NavigatorConfiguration(
     name =  "settings",
     startLocation = "$baseURL/settings",
-//    startLocation = "$baseURL/signed_in",
     navigatorHostId = R.id.settings_navigator_host,
   )
 )
 
+val statusTab = HotwireBottomTab(
+  title = "Status",
+  iconResId = R.drawable.settings,
+  configuration = NavigatorConfiguration(
+    name =  "status",
+    startLocation = "$baseURL/status",
+    navigatorHostId = R.id.status_navigator_host,
+  )
+)
+
+val signInTabs = listOf(
+  signInTab,
+)
+
 val mainTabs = listOf(
+  signInTab,
   notesTab, 
   newNoteTab,
   settingsTab,
+  statusTab,
+)
+
+val signedInTabs = listOf(
+  newNoteTab,
+  notesTab,
+  settingsTab,
+  statusTab,
 )

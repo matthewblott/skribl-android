@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.matthewblott.scribble.R
 import com.matthewblott.scribble.activities.MainActivity
-//import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
@@ -29,9 +28,8 @@ import dev.hotwire.navigation.destinations.HotwireDestination
 import dev.hotwire.navigation.fragments.HotwireFragment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import com.matthewblott.scribble.activities.baseURL
 
-class SignOutComponent(
+class SelectSignInTabFromStatusTabComponent (
   name: String,
   private val bridgeDelegate: BridgeDelegate<HotwireDestination>
 ) : BridgeComponent<HotwireDestination>(name, bridgeDelegate) {
@@ -42,9 +40,15 @@ class SignOutComponent(
   override fun onReceive(message: Message) {
     when (message.event) {
       "connect" -> addButton(message)
+      "connect" -> connectCallback(message)
       "disconnect" -> removeButton()
       else -> Log.w("Button Component", "Unknown event for message: $message")
     }
+  }
+
+  private fun connectCallback(message: Message) {
+    // Need to put in some sort of delay or check until it is confirmed the user has signed in 
+    replyTo(message.event)
   }
 
   private fun addButton(message: Message) {
@@ -64,16 +68,8 @@ class SignOutComponent(
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            // Need to check the login was successful before launching the main activity 
-//            val activity = fragment.activity as MainActivity
-//            activity.launchSignInActivity()
-            // Refresh first tab
-            // Move to first tab 
-
             val activity = fragment.activity as MainActivity
             activity.bottomNavigationController.selectTab(0)
-//            fragment.navigator.route("https://www.google.co.uk")
-//            fragment.navigator.route("$baseURL/signed_in")
             replyTo(message.event)
           })
       }
