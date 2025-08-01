@@ -28,7 +28,7 @@ import dev.hotwire.navigation.destinations.HotwireDestination
 import dev.hotwire.navigation.fragments.HotwireFragment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-class ButtonComponent(
+class CreateNoteComponent(
   name: String,
   private val bridgeDelegate: BridgeDelegate<HotwireDestination>
 ) : BridgeComponent<HotwireDestination>(name, bridgeDelegate) {
@@ -65,9 +65,9 @@ class ButtonComponent(
 //            val activity = fragment.activity as MainActivity
 //            activity.bottomNavigationController.selectTab(2)
 
-            val activity = fragment.activity as SignInActivity
+//            val activity = fragment.activity as SignInActivity
 //            activity.startActivity(android.content.Intent(this, MainActivity::class.java)) 
-            activity.launchMainActivity() 
+//            activity.launchMainActivity() 
             replyTo(message.event)
           })
       }

@@ -17,13 +17,11 @@ class SignInActivity : HotwireActivity() {
     enableEdgeToEdge()
     setContentView(R.layout.activity_sign_in)
     findViewById<View>(R.id.main_nav_host).applyDefaultImeWindowInsets()
-//    getSharedPreferences("prefs", MODE_PRIVATE) 
-//    startActivity(0)
   }
 
   fun launchMainActivity() {
     startActivity(Intent(this as Context, MainActivity::class.java))
-    finish() // kill LauncherActivity so it won't show in back stack
+    finish() // kill SignInActivity
   }
   
   override fun navigatorConfigurations() = listOf(

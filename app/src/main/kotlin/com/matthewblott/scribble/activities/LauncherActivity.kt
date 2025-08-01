@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.webkit.CookieManager
 import androidx.appcompat.app.AppCompatActivity
+import com.matthewblott.scribble.Settings
 
 class LauncherActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,20 +24,8 @@ class LauncherActivity : AppCompatActivity() {
   }
 
   private fun checkIfUserIsLoggedIn(): Boolean {
-    // Replace with real auth logic (e.g. FirebaseAuth, SharedPreferences, etc.)
-//    return getSharedPreferences("prefs", MODE_PRIVATE)
-//      .getBoolean("logged_in", false)
-
     val cookieManager = CookieManager.getInstance()
-    val cookies = cookieManager.getCookie("http://10.0.2.2")
-
-//    val isSignedIn = cookies != null &&
-//      cookies.contains("_web_session=") &&
-//      cookies.contains("session_token=") &&
-//      cookies.contains("user_id=") &&
-//      !cookies.contains("_web_session=;") && // Not empty
-//      !cookies.contains("session_token=;") && // Not empty
-//      !cookies.contains("user_id=;") // Not empty
+    val cookies = cookieManager.getCookie(Settings.baseUrl)
 
     val isSignedIn = cookies != null &&
       cookies.contains("session_token=") &&

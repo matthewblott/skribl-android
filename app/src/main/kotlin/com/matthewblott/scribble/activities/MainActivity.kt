@@ -15,8 +15,6 @@ import dev.hotwire.navigation.activities.HotwireActivity
 import dev.hotwire.navigation.tabs.navigatorConfigurations
 import dev.hotwire.navigation.util.applyDefaultImeWindowInsets
 
-const val baseURL = "http://10.0.2.2:3000"
-
 class MainActivity : HotwireActivity() {
   lateinit var bottomNavigationController: HotwireBottomNavigationController
   private val viewModel: MainActivityViewModel by viewModels()
