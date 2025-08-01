@@ -19,6 +19,7 @@
       "properties": {
         "title": "New Note",
         "uri": "hotwire://fragment/web",
+        "presentation": "replace_root",
         "pull_to_refresh_enabled": false 
       }
     }

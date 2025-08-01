@@ -24,7 +24,6 @@ class MainActivity : HotwireActivity() {
     enableEdgeToEdge()
     setContentView(R.layout.activity_main)
     findViewById<View>(R.id.root).applyDefaultImeWindowInsets()
-//    getSharedPreferences("prefs", MODE_PRIVATE) 
     initializeBottomNavigationView()
   }
 

@@ -1,6 +1,5 @@
 package com.matthewblott.scribble.activities
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.webkit.CookieManager
@@ -11,7 +10,7 @@ class LauncherActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
-    val isLoggedIn = checkIfUserIsLoggedIn() // implement this
+    val isLoggedIn = checkIfUserIsLoggedIn()
 
     val nextActivity = if (isLoggedIn) {
       MainActivity::class.java
