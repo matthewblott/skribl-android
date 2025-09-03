@@ -14,13 +14,21 @@
     },
     {
       "patterns": [
+        "/\\d+/notes$"
+      ],
+      "properties": {
+        "uri": "hotwire://fragment/web",
+        "presentation": "replace_root"
+      }
+    },
+    {
+      "patterns": [
         "/\\d+/notes/new$"
       ],
       "properties": {
-        "title": "New Note",
         "uri": "hotwire://fragment/web",
         "presentation": "replace_root",
-        "pull_to_refresh_enabled": false 
+        "pull_to_refresh_enabled": false
       }
     }
   ]

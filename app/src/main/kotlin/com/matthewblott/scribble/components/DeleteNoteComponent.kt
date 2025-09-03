@@ -1,13 +1,9 @@
 package com.matthewblott.scribble.components
 
-import android.os.Build
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup
-import android.webkit.CookieManager
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.PaddingValues
@@ -25,13 +21,12 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.matthewblott.scribble.R
-import com.matthewblott.scribble.activities.SignInActivity
-import com.matthewblott.scribble.components.SignInComponent.MessageData
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
 import dev.hotwire.navigation.destinations.HotwireDestination
 import dev.hotwire.navigation.fragments.HotwireFragment
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 class DeleteNoteComponent (
@@ -46,7 +41,6 @@ class DeleteNoteComponent (
     when (message.event) {
       "connect" -> addButton(message)
       "disconnect" -> removeButton()
-//      "show" -> showAlert(message)
       else -> Log.w("DeleteNoteComponent", "Unknown event for message: $message")
     }
   }
@@ -63,7 +57,7 @@ class DeleteNoteComponent (
   }
 
   private fun addButton(message: Message) {
-    val data = message.data<com.matthewblott.scribble.components.SignInComponent.MessageData>() ?: return
+    val data = message.data<MessageData>() ?: return
     removeButton()
 
     val marginInPx = TypedValue.applyDimension(
@@ -80,7 +74,6 @@ class DeleteNoteComponent (
           imageName = data.imageName,
           onClick = {
             showAlert(message) 
-//            replyTo(message.event)
           })
       }
     }
@@ -110,7 +103,8 @@ class DeleteNoteComponent (
     val description: String?,
     val destructive: Boolean,
     val confirm: String,
-    val dismiss: String
+    val dismiss: String,
+    @SerialName("androidImage") val imageName: String?
   )
 }
 

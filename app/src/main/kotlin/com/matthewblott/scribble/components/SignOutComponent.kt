@@ -63,7 +63,6 @@ class SignOutComponent(
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            // Need to check the login was successful before launching the main activity 
             val activity = fragment.activity as MainActivity
             activity.launchSignInActivity()
             replyTo(message.event)

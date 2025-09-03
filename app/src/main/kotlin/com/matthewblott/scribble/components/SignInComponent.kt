@@ -1,16 +1,9 @@
 package com.matthewblott.scribble.components
   
-import android.net.Uri
-import android.os.Build
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
-import android.view.View
 import android.view.ViewGroup
-import android.webkit.CookieManager
-import android.webkit.WebView
 import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
@@ -26,15 +19,12 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.fragment.app.Fragment
 import com.matthewblott.scribble.R
-import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
 import dev.hotwire.core.bridge.Message
 import dev.hotwire.navigation.destinations.HotwireDestination
 import dev.hotwire.navigation.fragments.HotwireFragment
-import dev.hotwire.navigation.views.HotwireView
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -70,34 +60,9 @@ class SignInComponent(
         ToolbarButton(
           title = data.title,
           imageName = data.imageName,
-          onClick = {
-            // Need to check the login was successful before launching the main activity 
-            val cookieManager = CookieManager.getInstance()
-            
-            // Force multiple cookie syncs
-            repeat(3) {
-              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                cookieManager.flush()
-              }
-            }
-            // Longer delay to ensure cookies are written
-            Handler(Looper.getMainLooper()).postDelayed({
-              val fragment = bridgeDelegate.destination.fragment
-              val webView = findWebViewInFragment(fragment)
-              val url = webView?.url
-              val urlString = url.toString()
-              val destinationUrl = bridgeDelegate?.destination?.navigator?.location.toString()
-              
-              if(destinationUrl.contains("sign_in_success")) {
-                val userId = getQueryParam(destinationUrl, "user_id").toString()
-                com.matthewblott.scribble.Settings.userId = userId.toInt()
-                val activity = fragment.activity as SignInActivity
-                activity.launchMainActivity()
-              }
-            }, 500) // Increased delay
-            
-            replyTo(message.event)
-          })
+      onClick = {
+        replyTo(message.event)
+      })
       }
     }
     val layoutParams = Toolbar.LayoutParams(
@@ -112,32 +77,6 @@ class SignInComponent(
     toolbar?.addView(composeView, layoutParams)
   }
   
-  private fun getQueryParam(url: String, key: String): String? {
-    return Uri.parse(url).getQueryParameter(key)
-  } 
-  
-  private fun findWebViewInFragment(fragment: Fragment): WebView? {
-    val returnView = fragment.view?.let { view ->
-      findWebViewRecursively(view)
-    }
-    return returnView
-  }
-
-  private fun findWebViewRecursively(view: View): WebView? {
-    if (view is WebView){
-      return view
-    } 
-    
-    if (view is ViewGroup) {
-      for (i in 0 until view.childCount) {
-        val webView = findWebViewRecursively(view.getChildAt(i))
-        if (webView != null) {
-          return webView
-        }
-      }
-    }
-    return null
-  }
   private fun removeButton() {
     val toolbar = fragment.toolbarForNavigation()
     val button = toolbar?.findViewById<ComposeView>(buttonId)

@@ -4,11 +4,14 @@ import android.os.Build
 import android.webkit.CookieManager
 import com.matthewblott.scribble.components.AlertComponent
 import com.matthewblott.scribble.components.CreateNoteComponent
+import com.matthewblott.scribble.components.DeleteAccountComponent
 import com.matthewblott.scribble.components.DeleteNoteComponent
 import com.matthewblott.scribble.components.NewNoteComponent
 import com.matthewblott.scribble.components.ViewNotesFromIndexComponent
 import com.matthewblott.scribble.components.SignInComponent
+import com.matthewblott.scribble.components.SignInSuccessComponent
 import com.matthewblott.scribble.components.SignOutComponent
+import com.matthewblott.scribble.components.ToastComponent
 import com.matthewblott.scribble.components.ViewNotesComponent
 import com.matthewblott.scribble.fragments.WebFragment
 import dev.hotwire.core.BuildConfig
@@ -55,11 +58,14 @@ class Application : android.app.Application() {
       BridgeComponentFactory("alert", ::AlertComponent),
       BridgeComponentFactory("sign-in", ::SignInComponent),
       BridgeComponentFactory("sign-out", ::SignOutComponent),
+      BridgeComponentFactory("sign-in-success", ::SignInSuccessComponent),
       BridgeComponentFactory("view-notes", ::ViewNotesComponent),
       BridgeComponentFactory("view-notes-from-index", ::ViewNotesFromIndexComponent),
       BridgeComponentFactory("new-note", ::NewNoteComponent),
       BridgeComponentFactory("create-note", ::CreateNoteComponent),
       BridgeComponentFactory("delete-note", ::DeleteNoteComponent),
+      BridgeComponentFactory("delete-account", ::DeleteAccountComponent),
+      BridgeComponentFactory("toast", ::ToastComponent),
     ) 
     
     Hotwire.config.jsonConverter = dev.hotwire.core.bridge.KotlinXJsonConverter()

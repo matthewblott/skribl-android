@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.matthewblott.scribble.R
+import com.matthewblott.scribble.activities.MainActivity
 import com.matthewblott.scribble.activities.SignInActivity
 import dev.hotwire.core.bridge.BridgeComponent
 import dev.hotwire.core.bridge.BridgeDelegate
@@ -60,14 +61,9 @@ class CreateNoteComponent(
         ToolbarButton(
           title = data.title,
           imageName = data.imageName,
-          // Set the tab when the button is clicked 
           onClick = {
-//            val activity = fragment.activity as MainActivity
-//            activity.bottomNavigationController.selectTab(2)
-
-//            val activity = fragment.activity as SignInActivity
-//            activity.startActivity(android.content.Intent(this, MainActivity::class.java)) 
-//            activity.launchMainActivity() 
+            val activity = fragment.activity as MainActivity
+            activity.bottomNavigationController.selectTab(0)
             replyTo(message.event)
           })
       }
