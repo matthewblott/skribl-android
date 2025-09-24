@@ -4,6 +4,7 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.PaddingValues
@@ -73,7 +74,7 @@ class DeleteNoteComponent (
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            showAlert(message) 
+            showAlert(message)
           })
       }
     }

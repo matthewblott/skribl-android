@@ -14,7 +14,7 @@ class ToastComponent(
 ) : BridgeComponent<HotwireDestination>(name, bridgeDelegate) {
   override fun onReceive(message: Message) {
     when (message.event) {
-      "show" -> showToast(message)
+      "connect" -> showToast(message)
       else -> Log.w("ToastComponent", "Unknown event for message: $message")
     }
   }

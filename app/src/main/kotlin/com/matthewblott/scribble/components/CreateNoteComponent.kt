@@ -4,6 +4,7 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
@@ -62,8 +63,6 @@ class CreateNoteComponent(
           title = data.title,
           imageName = data.imageName,
           onClick = {
-            val activity = fragment.activity as MainActivity
-            activity.bottomNavigationController.selectTab(0)
             replyTo(message.event)
           })
       }
