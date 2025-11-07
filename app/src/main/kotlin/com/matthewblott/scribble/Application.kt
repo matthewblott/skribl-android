@@ -37,7 +37,7 @@ class Application : android.app.Application() {
 
   private fun configureApp() {
     val cookieManager = CookieManager.getInstance()
-    val cookie = cookieManager.getCookie(Settings.baseUrl)
+    val cookie = cookieManager.getCookie(Settings.current.url)
 
     Hotwire.loadPathConfiguration(
       context = this,

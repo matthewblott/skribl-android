@@ -24,7 +24,7 @@ class LauncherActivity : AppCompatActivity() {
 
   private fun checkIfUserIsLoggedIn(): Boolean {
     val cookieManager = CookieManager.getInstance()
-    val cookies = cookieManager.getCookie(Settings.baseUrl)
+    val cookies = cookieManager.getCookie(Settings.current.url)
 
     val isSignedIn = cookies != null &&
       cookies.contains("session_token=") &&
