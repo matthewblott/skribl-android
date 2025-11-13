@@ -6,7 +6,9 @@ import com.matthewblott.scribble.components.AlertComponent
 import com.matthewblott.scribble.components.CreateNoteComponent
 import com.matthewblott.scribble.components.DeleteAccountComponent
 import com.matthewblott.scribble.components.DeleteNoteComponent
+import com.matthewblott.scribble.components.EnterOtpComponent
 import com.matthewblott.scribble.components.NewNoteComponent
+import com.matthewblott.scribble.components.SendOtpComponent
 import com.matthewblott.scribble.components.ViewNotesFromIndexComponent
 import com.matthewblott.scribble.components.SignInComponent
 import com.matthewblott.scribble.components.SignInSuccessComponent
@@ -57,6 +59,8 @@ class Application : android.app.Application() {
     Hotwire.registerBridgeComponents(
       BridgeComponentFactory("alert", ::AlertComponent),
       BridgeComponentFactory("sign-in", ::SignInComponent),
+      BridgeComponentFactory("send-otp", ::SendOtpComponent),
+      BridgeComponentFactory("enter-otp", ::EnterOtpComponent),
       BridgeComponentFactory("sign-out", ::SignOutComponent),
       BridgeComponentFactory("sign-in-success", ::SignInSuccessComponent),
       BridgeComponentFactory("view-notes", ::ViewNotesComponent),

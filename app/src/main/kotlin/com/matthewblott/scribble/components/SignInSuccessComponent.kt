@@ -32,6 +32,5 @@ class SignInSuccessComponent(
   @Serializable
   data class MessageData(
     val value: String,
-    
   )
 }

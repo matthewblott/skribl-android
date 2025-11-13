@@ -14,6 +14,15 @@
     },
     {
       "patterns": [
+        "/send_otp$"
+      ],
+      "properties": {
+        "uri": "hotwire://fragment/web",
+        "presentation": "replace_root"
+      }
+    },
+    {
+      "patterns": [
         "/\\d+/notes$"
       ],
       "properties": {
