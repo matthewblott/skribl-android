@@ -27,6 +27,7 @@ class SignInSuccessComponent(
       }
       else -> Log.w("Button Component", "Unknown event for message: $message")
     }
+    
   }
   
   @Serializable
