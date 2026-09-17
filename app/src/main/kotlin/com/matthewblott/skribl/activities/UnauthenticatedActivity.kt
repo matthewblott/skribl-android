@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.matthewblott.skribl.R
+import com.matthewblott.skribl.configuration.Settings
 import dev.hotwire.navigation.navigator.NavigatorConfiguration
 import dev.hotwire.navigation.util.applyDefaultImeWindowInsets
 
@@ -17,13 +18,18 @@ class UnauthenticatedActivity: BaseHotwireActivity() {
 
   fun launchAuthenticatedActivity() {
     startActivity(Intent(this as Context, AuthenticatedActivity::class.java))
-    finish() // kill SignInActivity
+    finish() // kill other activity 
+  }
+
+  fun launchTestNewNoteActivity() {
+    startActivity(Intent(this as Context, TestNewNoteActivity::class.java))
+    finish() // kill other activity 
   }
   
   override fun navigatorConfigurations() = listOf(
     NavigatorConfiguration(
       name = "main",
-      startLocation = "http://10.0.2.2:3000",
+      startLocation = Settings.current.url, 
       navigatorHostId = R.id.unauthenticated_nav_host
     )
   )

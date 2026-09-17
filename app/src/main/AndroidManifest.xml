@@ -27,7 +27,6 @@
       </intent-filter>
     </activity>
     <activity android:name=".activities.AuthenticatedActivity" />
-<!--    <activity android:name=".activities.UnauthenticatedActivity" />-->
   </application>
 
 </manifest>

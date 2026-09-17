@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/layout_fragment_web.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/layout/fragment_web.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/xml_backup_rules.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/drawable_notes.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/notes.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/layout_activity_authenticated.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/layout/activity_authenticated.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/xml_network_security_config.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/drawable_note.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/note.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/layout_activity_unauthenticated.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/layout/activity_unauthenticated.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.matthewblott.skribl.app-debug-70:/layout_activity_test_new_note.xml.flat",
+        "source": "com.matthewblott.skribl.app-main-72:/layout/activity_test_new_note.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/drawable_settings.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/settings.xml"
+    },
+    {
+        "merged": "com.matthewblott.skribl.app-debug-70:/layout_activity_unauthenticated.xml.flat",
+        "source": "com.matthewblott.skribl.app-main-72:/layout/activity_unauthenticated.xml"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-anydpi/ic_launcher.xml"
+    }
+]

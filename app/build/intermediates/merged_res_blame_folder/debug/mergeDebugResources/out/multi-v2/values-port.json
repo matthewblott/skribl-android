@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.matthewblott.skribl.app-mergeDebugResources-68:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/Users/Matt/.gradle/caches/9.6.0/transforms/3a06db1da88ddf2c89bb3ade7f54b547/transformed/appcompat-1.7.0/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

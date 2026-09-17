@@ -26,7 +26,7 @@ class UnauthenticatedComponent(
           activity.launchUnauthenticatedActivity()
         }
       }
-      else -> Log.w("AuthenticatedComponent", "Unknown event for message: $message")
+      else -> Log.w("UnauthenticatedComponent", "Unknown event for message: $message")
     }
   }
 
