@@ -21,11 +21,6 @@ class UnauthenticatedActivity: BaseHotwireActivity() {
     finish() // kill other activity 
   }
 
-  fun launchTestNewNoteActivity() {
-    startActivity(Intent(this as Context, TestNewNoteActivity::class.java))
-    finish() // kill other activity 
-  }
-  
   override fun navigatorConfigurations() = listOf(
     NavigatorConfiguration(
       name = "main",

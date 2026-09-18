@@ -16,10 +16,8 @@ id bottom_nav
 id new_note_navigator_host
 id notes_navigator_host
 id settings_navigator_host
-id test_new_note_nav_host
 id unauthenticated_nav_host
 layout activity_authenticated
-layout activity_test_new_note
 layout activity_unauthenticated
 layout fragment_web
 mipmap ic_launcher

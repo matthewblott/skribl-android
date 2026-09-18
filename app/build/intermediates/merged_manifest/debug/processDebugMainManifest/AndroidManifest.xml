@@ -46,7 +46,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.matthewblott.skribl.activities.AuthenticatedActivity" />
-        <activity android:name="com.matthewblott.skribl.activities.TestNewNoteActivity" />
 
         <provider
             android:name="dev.hotwire.core.files.util.HotwireFileProvider"

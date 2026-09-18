@@ -4250,7 +4250,6 @@ int id tag_transition_group 0x7f0901f6
 int id tag_unhandled_key_event_manager 0x7f0901f7
 int id tag_unhandled_key_listeners 0x7f0901f8
 int id tag_window_insets_animation_callback 0x7f0901f9
-int id test_new_note_nav_host 0x7f09023b
 int id text 0x7f0901fa
 int id text2 0x7f0901fb
 int id textEnd 0x7f0901fc
@@ -4437,7 +4436,6 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_authenticated 0x7f0c001c
-int layout activity_test_new_note 0x7f0c0079
 int layout activity_unauthenticated 0x7f0c001d
 int layout browser_actions_context_menu_page 0x7f0c001e
 int layout browser_actions_context_menu_row 0x7f0c001f

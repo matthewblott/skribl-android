@@ -36,6 +36,10 @@
         "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/notes.xml"
     },
     {
+        "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/layout_activity_test_new_note.xml.flat",
+        "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/layout/activity_test_new_note.xml"
+    },
+    {
         "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/layout_activity_authenticated.xml.flat",
         "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/layout/activity_authenticated.xml"
     },
@@ -80,16 +84,8 @@
         "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.matthewblott.skribl.app-debug-70:/layout_activity_test_new_note.xml.flat",
-        "source": "com.matthewblott.skribl.app-main-72:/layout/activity_test_new_note.xml"
-    },
-    {
         "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/drawable_settings.xml.flat",
         "source": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-main-72:/drawable/settings.xml"
-    },
-    {
-        "merged": "com.matthewblott.skribl.app-debug-70:/layout_activity_unauthenticated.xml.flat",
-        "source": "com.matthewblott.skribl.app-main-72:/layout/activity_unauthenticated.xml"
     },
     {
         "merged": "/Users/Matt/.gradle/daemon/9.6.0/com.matthewblott.skribl.app-debug-70:/mipmap-xxhdpi_ic_launcher_round.webp.flat",

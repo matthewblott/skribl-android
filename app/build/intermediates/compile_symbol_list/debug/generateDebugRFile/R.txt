@@ -15,10 +15,8 @@ int id bottom_nav 0x0
 int id new_note_navigator_host 0x0
 int id notes_navigator_host 0x0
 int id settings_navigator_host 0x0
-int id test_new_note_nav_host 0x0
 int id unauthenticated_nav_host 0x0
 int layout activity_authenticated 0x0
-int layout activity_test_new_note 0x0
 int layout activity_unauthenticated 0x0
 int layout fragment_web 0x0
 int mipmap ic_launcher 0x0
