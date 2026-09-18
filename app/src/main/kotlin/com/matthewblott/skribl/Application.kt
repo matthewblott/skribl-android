@@ -1,7 +1,8 @@
 package com.matthewblott.skribl
 
-import com.masilotti.bridgecomponents.shared.Bridgework
+import com.masilotti.bridgecomponents.toast.ToastComponent
 import com.matthewblott.skribl.components.AuthenticatedComponent
+import com.matthewblott.skribl.components.ButtonComponent
 import com.matthewblott.skribl.components.DownloadComponent
 import com.matthewblott.skribl.components.NoticeComponent
 import com.matthewblott.skribl.components.UnauthenticatedComponent
@@ -38,10 +39,11 @@ class Application : android.app.Application() {
     )
     
     Hotwire.registerBridgeComponents(
-      *Bridgework.coreComponents,
-      BridgeComponentFactory("authenticated", ::AuthenticatedComponent),
+        BridgeComponentFactory("authenticated", ::AuthenticatedComponent),
+      BridgeComponentFactory("button", ::ButtonComponent),
       BridgeComponentFactory("download", ::DownloadComponent),
       BridgeComponentFactory("notice", ::NoticeComponent),
+      BridgeComponentFactory("toast", ::ToastComponent),
       BridgeComponentFactory("unauthenticated", ::UnauthenticatedComponent),
     )
   }
